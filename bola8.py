@@ -23,8 +23,6 @@ print('Hmm, deixe-me pensar...\n')
 
 cont = int(input('Quantas respostas quer?\n'))
 
-for i in range(cont):
-    resposta = ans[r.randint(0,7)]
-    print(resposta)
+resposta = ans[r.randint(0,7)]
 
 input(f'\nObrigado por brincar comigo, {nome}! Para terminar, pressione ENTER...')
