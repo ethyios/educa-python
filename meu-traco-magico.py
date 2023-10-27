@@ -7,7 +7,6 @@ quadro_cor = 'black'
 
 p1_x = quadro_x/2
 p1_y = quadro_y/2
-p1_cor = 'green'
 linha_x = 5
 linha_y = 5
 
@@ -15,7 +14,7 @@ linha_y = 5
 ## funcs
 def p1_mov_UP(self):
     global p1_y
-    quadro.create_line(p1_x, p1_y, p1_x, (p1_y-linha_y), width=linha_x, fill=p1_cor)
+    quadro.create_line(p1_x, p1_y, p1_x, (p1_y-linha_y), width=linha_x, fill="green") 
     p1_y-=linha_y
 
 def p1_mov_DOWN(self):
@@ -37,8 +36,10 @@ def erase_all(self):
     quadro.delete(ALL)
 
 def reset_pos(self):
-    super.p1_x = quadro_x/2
-    super.p1_y = quadro_y/2
+    global p1_x
+    p1_x = quadro_x/2
+    global p1_y
+    p1_y = quadro_y/2
 
 
 
@@ -51,9 +52,10 @@ quadro = Canvas(bg=quadro_cor, width=quadro_x, height=quadro_y, highlightthickne
 quadro.pack()
 
 janela.bind("<Up>", p1_mov_UP)
-janela.bind("<Down>,", p1_mov_DOWN)
-janela.bind("<Left>,", p1_mov_LEFT)
-janela.bind("<Right>,", p1_mov_RIGHT)
+janela.bind("<Down>", p1_mov_DOWN)
+janela.bind("<Left>", p1_mov_LEFT)
+janela.bind("<Right>", p1_mov_RIGHT)
 janela.bind("u", erase_all)
+janela.bind("r",reset_pos)
 
 janela.mainloop()

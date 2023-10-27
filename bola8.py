@@ -1,5 +1,6 @@
 # Bola8Mágica
 import random as r
+i=1
 
 # respostas
 ans= [
@@ -23,6 +24,9 @@ print('Hmm, deixe-me pensar...\n')
 
 cont = int(input('Quantas respostas quer?\n'))
 
-resposta = ans[r.randint(0,7)]
+while i<cont:
+    resposta = ans[r.randint(0,7)]
+    print(resposta)
+    i = i+1
 
 input(f'\nObrigado por brincar comigo, {nome}! Para terminar, pressione ENTER...')
